@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="headercol">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ 
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Email:</ion-label>
+      <ion-input type="text" placeholder="email@example.com" [(ngModel)]="email" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Password:</ion-label>
+      <ion-input type="password" placeholder="********" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <button ion-button round outline icon-only (click)="myLogIn()">
+      <ion-icon name="log-in"></ion-icon>
+    </button>
+  </ion-list>
+ 
+
+ <google-login></google-login>
+
+ <button ion-button round block icon-start>
+  <ion-icon name="logo-facebook"></ion-icon>
+  Sign in with Facebook    
+ </button>
+</ion-content>

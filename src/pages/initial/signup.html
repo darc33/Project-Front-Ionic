@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="headercol">
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Name:</ion-label>
+      <ion-input type="text" placeholder="name" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-label stacked>Last Name:</ion-label>
+      <ion-input type="text" placeholder="last name"></ion-input>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label stacked>Email:</ion-label>
+      <ion-input type="email" placeholder="email@example.com" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Password:</ion-label>
+      <ion-input type="password" placeholder="********" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Phone:</ion-label>
+      <ion-input type="text" placeholder="(+57) 1 100 0000"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="gender" interface="popover">
+        <ion-option value="m">Male</ion-option>
+        <ion-option value="f">Female</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button round outline icon-only (click)="myRegister()">
+    <ion-icon name="log-in"></ion-icon>
+  </button>
+</ion-content>

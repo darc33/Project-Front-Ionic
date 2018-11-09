@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { login } from '../initial/login';
-import { signup } from '../initial/signup';
+import { login } from './login';
+import { signup } from './signup';
 import { AuthProvider } from '../../providers/auth/auth';
 
-@Component({
-	selector: 'page-home',
-	templateUrl: 'home.html'
-})
-export class HomePage {
 
+@Component({
+	selector: 'page-initial',
+	templateUrl: 'initial.html'
+})
+export class InitialPage {
+
+	//public navCtrl: NavController
 	constructor(public navCtrl: NavController, public auth: AuthProvider) {
 
 	}

@@ -16,16 +16,22 @@
     "@angular/compiler": "5.2.11",
     "@angular/compiler-cli": "5.2.11",
     "@angular/core": "5.2.11",
+    "@angular/fire": "^5.1.0",
     "@angular/forms": "5.2.11",
     "@angular/http": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ionic-native/core": "~4.15.0",
+    "@ionic-native/google-plus": "^4.17.0",
     "@ionic-native/splash-screen": "~4.15.0",
     "@ionic-native/status-bar": "~4.15.0",
     "@ionic/storage": "2.2.0",
+    "angularfire2": "^5.1.0",
+    "cordova-plugin-googleplus": "5.3.2",
+    "firebase": "^5.5.7",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "promise-polyfill": "^8.1.0",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26"
@@ -34,5 +40,13 @@
     "@ionic/app-scripts": "3.2.0",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.11902064902-aedho8a14ull6vimdi7sguekn69nk1op",
+        "WEB_APPLICATION_CLIENT_ID": "53547420094-intrsdafu7rs2frj7je5bap0qd9hk875.apps.googleusercontent.com"
+      }
+    }
+  }
 }
