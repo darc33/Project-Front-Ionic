@@ -3,6 +3,8 @@ import { IonicPage, NavController, AlertController, NavParams } from 'ionic-angu
 
 import { AuthProvider } from '../../providers/auth/auth';
 import { HomePage } from '../home/home';
+import { SearchPage} from '../search/search';
+
 
 @IonicPage()
 @Component({
@@ -63,7 +65,7 @@ export class login {
         
          this.authService.login(credentials).then((result) => {
             console.log(result);
-            this.navCtrl.setRoot(HomePage);
+            this.navCtrl.setRoot(SearchPage);
            
         }, (err) => {
      

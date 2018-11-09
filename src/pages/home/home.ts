@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { login } from '../initial/login';
 import { signup } from '../initial/signup';
+import { SearchPage} from '../search/search';
 import { AuthProvider } from '../../providers/auth/auth';
 
 @Component({
@@ -20,6 +21,10 @@ export class HomePage {
 
 	registrar(){
 		this.navCtrl.push(signup);
+	}
+
+	Ir(){
+		this.navCtrl.push(SearchPage);
 	}
 
 
