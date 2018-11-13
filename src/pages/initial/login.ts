@@ -65,9 +65,12 @@ export class login {
         
          this.authService.login(credentials).then((result) => {
             console.log(result);
-            //this.menuCtrl.enable(false);
             this.events.publish('user:loggedin');
-            this.navCtrl.setRoot(SearchPage);
+            this.navCtrl.setRoot(SearchPage).then(()=>
+              {
+                console.log("login:user");
+                this.events.publish("user:loggedin");
+              });
            
         }, (err) => {
      

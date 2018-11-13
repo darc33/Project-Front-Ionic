@@ -18,6 +18,7 @@ import { Http , Headers } from '@angular/http';
 
   	url: string = ENV.API;
   	public token: any;
+    public role: any;
 
   	constructor(public http: Http, public storage: Storage) {
   		console.log('Hello AuthProvider Provider');
@@ -56,7 +57,7 @@ import { Http , Headers } from '@angular/http';
   				let data = res.json();
   				this.token = data.access_token;
   				this.storage.set('token', data.access_token);
-
+          this.role=0;
   				resolve(data);
   			}, (err) => {
   				reject(err);
@@ -83,13 +84,13 @@ import { Http , Headers } from '@angular/http';
   	}
 
 
-
-
-
-
   	logout(){
   		this.storage.set('token', '');
 
   	}
+
+    isLoggedIn(){
+      return this.role === 0;
+    }
 
   }
