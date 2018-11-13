@@ -10,6 +10,7 @@ import { login } from '../pages/initial/login';
 import { signup } from '../pages/initial/signup';
 import { OtroPage } from '../pages/otro/otro';
 import { SearchPage} from '../pages/search/search';
+import { LogoutPage } from '../pages/logout/logout';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpModule } from '@angular/http'; 
@@ -46,7 +47,8 @@ export const firebaseConfig = {
     login,
     signup,
     OtroPage,
-    SearchPage
+    SearchPage,
+    LogoutPage
   ],
   imports: [
     BrowserModule,
@@ -66,7 +68,8 @@ export const firebaseConfig = {
     login,
     signup,
     OtroPage,
-    SearchPage
+    SearchPage,
+    LogoutPage
   ],
   providers: [
     GooglePlus,

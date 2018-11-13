@@ -5,8 +5,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { InitialPage} from '../pages/initial/initial';
+import { InitialPage } from '../pages/initial/initial';
 import { OtroPage} from '../pages/otro/otro';
+import { LogoutPage } from '../pages/logout/logout';
+import { SearchPage } from '../pages/search/search';
+
+
+
+
+import { Events} from 'ionic-angular';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,7 +25,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, events:Events) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -28,6 +35,23 @@ export class MyApp {
       { title: 'Initial', component: InitialPage},
       { title: 'Otro', component: OtroPage}
     ];
+
+    events.subscribe('user:loggedin',()=>{
+      this.pages = [
+                    {title:'Dashboard', component: HomePage},
+                    {title:'My Account', component: ListPage},
+                    {title:'Give Feedback', component: OtroPage},
+                    {title:'Logout', component: LogoutPage}
+                    ];
+    });
+
+      events.subscribe('user:loggedout',()=>{
+      this.pages = [
+                    {title:'Login', component: HomePage},
+                    {title:'Register', component: ListPage},
+                    {title:'Contact Us', component: OtroPage}
+                    ];
+    });
 
   }
 

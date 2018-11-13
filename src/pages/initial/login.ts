@@ -5,6 +5,9 @@ import { AuthProvider } from '../../providers/auth/auth';
 import { HomePage } from '../home/home';
 import { SearchPage} from '../search/search';
 
+import { MenuController } from 'ionic-angular';
+import { Events } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -20,7 +23,10 @@ export class login {
 
 	constructor(public navCtrl: NavController,public navParams: NavParams,
 		public authService: AuthProvider ,
-    	public alertCtrl: AlertController) {	
+    	public alertCtrl: AlertController,
+      public menuCtrl: MenuController,
+      public events:Events) {	
+
 	}
 
 	ionViewDidLoad() {
@@ -39,12 +45,6 @@ export class login {
 
     	// alert.present();
   	}
-
-
-
-
-
-
 
   myLogIn(){
  
@@ -65,6 +65,8 @@ export class login {
         
          this.authService.login(credentials).then((result) => {
             console.log(result);
+            //this.menuCtrl.enable(false);
+            this.events.publish('user:loggedin');
             this.navCtrl.setRoot(SearchPage);
            
         }, (err) => {

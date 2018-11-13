@@ -15,8 +15,16 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+.toolbar-background-ios{
+	background:linear-gradient(to right, #2989d8 0%,#173777 80%,#1a1b30 100%);
+}
+
 .itolbar {
 	background:linear-gradient(to right, #2989d8 0%,#173777 80%,#1a1b30 100%);
+}
+
+.toolbar-title-ios{
+	color:white;
 }
 
 .btnlist{
