@@ -38,7 +38,7 @@ export class login {
   	errorFunc(message){
     	// let alert = 
     	this.alertCtrl.create({
-      	title: 'Warining!',
+      	title: 'Warning!',
       	subTitle: message,
       	buttons: ['OK']
     	}).present();

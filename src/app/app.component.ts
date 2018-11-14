@@ -8,10 +8,11 @@ import { ListPage } from '../pages/list/list';
 import { InitialPage } from '../pages/initial/initial';
 import { OtroPage} from '../pages/otro/otro';
 import { LogoutPage } from '../pages/logout/logout';
-import { SearchPage } from '../pages/search/search';
 import { SettingPage } from '../pages/setting/setting';
+import { ReportPage } from '../pages/report/report';
 import { AboutPage } from '../pages/about/about';
 import { PrivacyPage } from '../pages/privacy/privacy';
+import { AccountPage } from '../pages/account/account';
 
 import { Events} from 'ionic-angular';
 
@@ -31,9 +32,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
       { title: 'Herramientas', component: SettingPage },
-      { title: 'Acerca de', component: AboutPage},
+      { title: 'Contactenos', component: AboutPage},
       { title: 'Politica de privacidad', component: PrivacyPage}
     ];
 
@@ -41,20 +41,21 @@ export class MyApp {
     events.subscribe('user:loggedin',()=>{
       console.log("suscrito");
       this.pages = [
-                    {title:'Dashboard', component: HomePage},
-                    {title:'My Account', component: ListPage},
-                    {title:'Herramientas', component: OtroPage},
+                    {title:'Añadir reporte', component: ReportPage},
+                    {title:'Mi cuenta', component: AccountPage},
+                    {title:'Herramientas', component: SettingPage},
                     {title:'Salir', component: LogoutPage}
                     ];
     });
 
-    // events.subscribe('user:loggedout',()=>{
-    //   this.pages = [
-    //                 {title:'Login', component: HomePage},
-    //                 {title:'Register', component: ListPage},
-    //                 {title:'Contact Us', component: OtroPage}
-    //                 ];
-    // });
+    events.subscribe('user:loggedout',()=>{
+      console.log("unsunscribe");
+      this.pages = [
+                    { title: 'Herramientas', component: SettingPage },
+                    { title: 'Contactenos', component: AboutPage},
+                    { title: 'Politica de privacidad', component: PrivacyPage}
+                    ];
+    });
 
   }
 
@@ -70,6 +71,6 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    this.nav.push(page.component);
   }
 }

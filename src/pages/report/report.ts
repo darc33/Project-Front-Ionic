@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { HomePage } from '../home/home';
-
+import { SearchPage} from '../search/search';
 
 /**
- * Generated class for the AboutPage page.
+ * Generated class for the ReportPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,20 +11,18 @@ import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html',
+  selector: 'page-report',
+  templateUrl: 'report.html',
 })
-export class AboutPage {
-  name:string ='';
-  email:string ='';
-  topic:string ='';
-  message:string ='';
+export class ReportPage {
+  name:string = '';
+  type:string = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ContactPage');
+    console.log('ionViewDidLoad ReportPage');
   }
 
   errorFunc(message){
@@ -39,20 +36,19 @@ export class AboutPage {
 
   enviar(){
     //console.log( "log:" + this.email.trim() + "   " + this.name.trim() + "   " + this.topic.trim() + "   " + this.message.trim() );
-    if (this.name.trim() === '' || this.email.trim() === '' || this.topic.trim() === '' || this.message.trim() === ''){
-      this.errorFunc('Por favor llene los espacios requeridos')
+    if (this.name.trim() === '' || this.type.trim() === ''){
+      this.errorFunc('Datos faltantes')
     }
     else{
       let alert = this.alertCtrl.create({
-        title: 'Exito!',
-        subTitle: 'Gracias por su mensaje.',
+        title: 'Gracias!',
+        subTitle: 'Reporte generado',
         buttons: ['OK']
       });
       alert.present();
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot(SearchPage);
     }
   	
   }
-  
 
 }

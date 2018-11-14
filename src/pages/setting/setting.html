@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="headercol">
     <ion-title>Setting</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,50 @@
 
 
 <ion-content padding>
+
+	<ion-list>
+		<ion-list-header>
+			Notificaciones
+		</ion-list-header>
+		<ion-item>
+			<ion-label>Habilitar Notificaciones</ion-label>
+  			<ion-toggle color="secondary" checked="false"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>Vibrar para notificaciones</ion-label>
+  			<ion-toggle color="secondary" checked="true"></ion-toggle>
+		</ion-item>
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			Uso de datos celulares
+		</ion-list-header>
+		<ion-item>
+			<ion-label>Usar menos datos</ion-label>
+  			<ion-toggle color="secondary" checked="false"></ion-toggle>
+		</ion-item>
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			Privacidad
+		</ion-list-header>
+		<ion-item>
+			<ion-label>Datos de localizacion</ion-label>
+  			<ion-toggle color="secondary" checked="true"></ion-toggle>
+		</ion-item>
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			Mapa
+		</ion-list-header>
+		<ion-item>
+			<ion-label>Puntos de interes</ion-label>
+  			<ion-toggle color="secondary" checked="false"></ion-toggle>
+		</ion-item>
+	</ion-list>
+
 
 </ion-content>

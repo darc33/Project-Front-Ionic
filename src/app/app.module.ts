@@ -11,6 +11,11 @@ import { signup } from '../pages/initial/signup';
 import { OtroPage } from '../pages/otro/otro';
 import { SearchPage} from '../pages/search/search';
 import { LogoutPage } from '../pages/logout/logout';
+import { SettingPage } from '../pages/setting/setting';
+import { AboutPage } from '../pages/about/about';
+import { PrivacyPage } from '../pages/privacy/privacy';
+import { AccountPage } from '../pages/account/account';
+import { ReportPage } from '../pages/report/report';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpModule } from '@angular/http'; 
@@ -48,7 +53,12 @@ export const firebaseConfig = {
     signup,
     OtroPage,
     SearchPage,
-    LogoutPage
+    LogoutPage,
+    SettingPage,
+    AboutPage,
+    PrivacyPage,
+    AccountPage,
+    ReportPage
   ],
   imports: [
     BrowserModule,
@@ -69,7 +79,12 @@ export const firebaseConfig = {
     signup,
     OtroPage,
     SearchPage,
-    LogoutPage
+    LogoutPage,
+    SettingPage,
+    AboutPage,
+    PrivacyPage,
+    AccountPage,
+    ReportPage
   ],
   providers: [
     GooglePlus,
