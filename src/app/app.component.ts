@@ -14,6 +14,8 @@ import { AboutPage } from '../pages/about/about';
 import { PrivacyPage } from '../pages/privacy/privacy';
 import { AccountPage } from '../pages/account/account';
 
+import { AuthProvider } from '../providers/auth/auth';
+
 import { Events} from 'ionic-angular';
 
 @Component({
@@ -23,11 +25,13 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
+  email: any = '';
+  user: any = '';
 
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
-   events:Events) {
+   events:Events, public authService: AuthProvider) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -46,6 +50,7 @@ export class MyApp {
                     {title:'Herramientas', component: SettingPage},
                     {title:'Salir', component: LogoutPage}
                     ];
+      this.email=authService.info();
     });
 
     events.subscribe('user:loggedout',()=>{
@@ -55,6 +60,7 @@ export class MyApp {
                     { title: 'Contactenos', component: AboutPage},
                     { title: 'Politica de privacidad', component: PrivacyPage}
                     ];
+      this.email='';
     });
 
   }

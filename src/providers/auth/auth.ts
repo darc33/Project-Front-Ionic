@@ -19,6 +19,8 @@ import { Http , Headers } from '@angular/http';
   	url: string = ENV.API;
   	public token: any;
     public role: any;
+    public user: any;
+    public email: any;
 
   	constructor(public http: Http, public storage: Storage) {
   		console.log('Hello AuthProvider Provider');
@@ -51,7 +53,7 @@ import { Http , Headers } from '@angular/http';
   			headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
   			headers.append('Accept','application/json');
   			headers.append('content-type','application/json');
-
+        this.email = credentials.email;
   			this.http.post(this.url+'auth/login', JSON.stringify(credentials), {headers: headers})
   			.subscribe(res => {
   				let data = res.json();
@@ -91,6 +93,10 @@ import { Http , Headers } from '@angular/http';
 
     isLoggedIn(){
       return this.role === 0;
+    }
+
+    info(){
+      return this.email;
     }
 
   }

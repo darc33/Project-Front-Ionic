@@ -1,11 +1,19 @@
 <ion-menu id="myMenu" [content]="content">
   <ion-header >
+
     <ion-toolbar class="itolbar btnlist">
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content class="itolbar">
+    <div *ngIf="email" class="ctnr">
+      <ion-item class="itolbar btnlist">
+        <ion-icon name="contact" item-start></ion-icon>
+        <h2>{{user}}</h2>
+        <p>{{email}}</p>
+      </ion-item>
+    </div>
     <ion-list>
       <button class="itolbar btnlist" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
